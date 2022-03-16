@@ -16,21 +16,22 @@
  */
 
 const $buttonSubmit = document.getElementById('btnRegister');
-const $inputList    = document.getElementById('formInput');
+const $inputList    = document.getElementById('formInput');// Cần sử dụng function khác để lấy dom: dùng querySelectorAll();
 
 $buttonSubmit.addEventListener('click', function(event){
     event.preventDefault();
     loginHandler();
 });
 
-$inputList.forEach(function(inputItem) {
-    $inputList.addEventListener('enter', function(event){
+$inputList.forEach(function(inputItem) {// thiếu đấu $
+    $inputList.addEventListener('enter', function(event){//dùng sai dom
         event.preventDefault();
         loginHandler();
     });
 });
 
 function loginHandler() {
+    // Cần format code lại
     const $usernameDom  = document.querySelector('.usernameInput');
     const $emailDOm     = document.querySelector('.emailInput');
     const $phoneDom = document.querySelector('.phoneInput');
@@ -39,7 +40,7 @@ function loginHandler() {
 
     const formRegister =  {
         username : $usernameDom.value,
-        email: $emailDOm.value, 
+        email: $emailDOm.value,
         phone: $phoneDom.value,
         password: $passwordDom.value,
         confirmpassword: $confirmPasswordDom.value
@@ -54,7 +55,7 @@ function loginHandler() {
 
 }
 
-function validateForm(form){ 
+function validateForm(form){
     const $usernameErrorDom = document.querySelector('.error-username');
     const $emailErrorDom = document.querySelector('.error-email');
     const $phoneErrorDom = document.querySelector('.error-phone');
@@ -69,9 +70,9 @@ function validateForm(form){
    *      . username viết liền không dấu
    *      . username ko chứa ký tự đặt biết [!@#$%^&*()-]
    */
-    
+
     if(form.username.trim().length === 0) {
-        // user chưa được nhập 
+        // user chưa được nhập
         $usernameErrorDom.innerText = 'Vui lòng nhập username';
         $usernameErrorDom.style.display = 'block';
     } else {
@@ -90,7 +91,7 @@ function validateForm(form){
          * - 1: email input đã nhập chưa
          * - 2: email input có hợp lệ không:
          */
-    if(form.email.trim().length ==0){
+    if(form.email.trim().length ==0){//format sai
         // email chưa dược nhập
         $emailErrorDom.innerText = 'Vui lòng nhập email';
         $emailErrorDom.style.display = 'block';
@@ -105,24 +106,24 @@ function validateForm(form){
             $emailErrorDom.style.display = 'block';
         }
     }
-        
+
          /**
    * Check validate phone input
    * - 1: phone input đã nhập chưa
    * - 2: phone input có hợp lệ không:
    */
-    if(form.phone.trim().length ==0){
-        // Chưa nhập phone 
+    if(form.phone.trim().length ==0){//format sai
+        // Chưa nhập phone
         $phoneErrorDom.innerText = 'Vui lòng nhập phone';
         $phoneErrorDom.style.display = 'block';
     } else {
-        // đã nhập phone 
+        // đã nhập phone
         let regexPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
         if(regexPhone.test(form.phone)){
             $phoneErrorDom.innerText = '';
             $phoneErrorDom.style.display = 'none';
         } else {
-            $phoneErrorDom.innerText = 'phone ko hợp lệ';
+            $phoneErrorDom.innerText = 'phone ko hợp lệ';//Chữ saisaii, ghi hoa chữ cái đầu
             $phoneErrorDom.style.display = 'block';
         }
     }
@@ -131,17 +132,15 @@ function validateForm(form){
    * - 1: password input đã nhập chưa
    * - 2: password phải có số ký tự lơn hơn hoặc bằng 10
    */
-    if(form.password.trim().length ==0){
+    if(form.password.trim().length ==0){//format sai
         // chưa nhập password
         $passwordErrorDom.innerText = 'Vui lòng nhập password';
         $passwordErrorDom.style.display = 'block';
     } else {
         // đã nhập password
-        
-    }
 
-
-
+    }//dư line
+    // dư line
 
     /**
    * Check validate confirmPassword input
@@ -149,21 +148,21 @@ function validateForm(form){
    * - 2: confirmPassword phải có số ký tự lơn hơn hoặc bằng 10
    * - 3: confirmPassword có giống với password khồng
    */
-     if(form.confirmpassword.trim().length ==0){
+     if(form.confirmpassword.trim().length ==0){//format sai
         // chưa nhập password
         $confirmpasswordErrorDom.innerText = 'Vui lòng nhập đúng password như trên';
         $confirmpasswordErrorDom.style.display = 'block';
     } else {
         // đã nhập password
-        
-    }
-        
-    
+
+    }// dư line
+    // dư line
+
 
     return formIsValid;
 }
-
-
-
-
-
+//
+//
+//
+//
+// dư line
