@@ -1,0 +1,21 @@
+I. Các cách để lấy dom
+
+1. document.getElementById('myId');
+a: khi nào sử dụng
+- Được sử dụng khi dom đang ở có ID
+b: Giá trị trả về
+- duy nhất một dom mà mình chỉ định
+
+2. document.querySelectorAll('[., #]myAttr');
+a: Khi nào sử dụng
+- Khi dom của mình đang ở dạng class
+- Không có id, cũng không có class
+b: Giá trị trả về
+- danh sách dom mà mình chỉ định
+
+3. document.querySelector('[., #]myAttr');
+a: Khi nào sử dụng
+- Khi dom của mình đang ở dạng class
+- Không có id, cũng không có class
+b: Giá trị trả về
+- duy nhất một dom mà mình chỉ định

@@ -16,7 +16,7 @@
  */
 
 const $buttonSubmit = document.getElementById('btnRegister');
-const $inputList   = document.querySelector('.formInput');
+const $inputList    = document.querySelector('.formInput');
 
 $buttonSubmit.addEventListener('click', function(event){
     event.preventDefault();
@@ -39,7 +39,7 @@ function loginHandler() {
 
     const formRegister =  {
         username : $usernameDom.value,
-        email: $emailDOm.value, 
+        email: $emailDOm.value,
         phone: $phoneDom.value,
         password: $passwordDom.value,
         confirmpassword: $confirmPasswordDom.value
@@ -54,7 +54,7 @@ function loginHandler() {
 
 }
 
-function validateForm(form){ 
+function validateForm(form){
     const $usernameErrorDom        = document.querySelector('.error-username');
     const $emailErrorDom           = document.querySelector('.error-email');
     const $phoneErrorDom           = document.querySelector('.error-phone');
@@ -69,9 +69,9 @@ function validateForm(form){
    *      . username viết liền không dấu
    *      . username ko chứa ký tự đặt biết [!@#$%^&*()-]
    */
-    
+
     if(form.username.trim().length == 0) {
-        // user chưa được nhập 
+        // user chưa được nhập
         $usernameErrorDom.innerText = 'Vui lòng nhập username';
         $usernameErrorDom.style.display = 'block';
     } else {
@@ -105,18 +105,18 @@ function validateForm(form){
             $emailErrorDom.style.display = 'block';
         }
     }
-        
+
          /**
    * Check validate phone input
    * - 1: phone input đã nhập chưa
    * - 2: phone input có hợp lệ không:
    */
     if(form.phone.trim().length ==0 ){
-        // Chưa nhập phone 
+        // Chưa nhập phone
         $phoneErrorDom.innerText = 'Vui lòng nhập phone';
         $phoneErrorDom.style.display = 'block';
     } else {
-        // đã nhập phone 
+        // đã nhập phone
         let regexPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
         if(regexPhone.test(form.phone)){
             $phoneErrorDom.innerText = '';
@@ -138,15 +138,15 @@ function validateForm(form){
     } else {
         // đã nhập password
         if(form.password.length >= 10){
-            // đúng 
+            // đúng
             $passwordErrorDom.innerText = '';
             $passwordErrorDom.style.display = 'none';
         } else {
-            // Sai 
+            // Sai
             $passwordErrorDom.innerText = ' Bạn phải nhập password >= 10 kí tự';
             $passwordErrorDom.style.display = 'block';
         }
-        
+
     }
 
     /**
@@ -163,7 +163,7 @@ function validateForm(form){
         // đã nhập password
         if(form.confirmpassword.length >= 10){
             if(form.password == form.confirmpassword){
-                 // đúng 
+                 // đúng
                 $confirmpasswordErrorDom.innerText = '';
                 $confirmpasswordErrorDom.style.display = 'none';
             } else {
@@ -172,7 +172,7 @@ function validateForm(form){
                 $confirmpasswordErrorDom.style.display = 'block';
             }
         } else {
-            // sai 
+            // sai
             $confirmpasswordErrorDom.innerText = ' Bạn phải nhập confirmpassword >= 10 kí tự';
             $confirmpasswordErrorDom.style.display = 'block';
         }
