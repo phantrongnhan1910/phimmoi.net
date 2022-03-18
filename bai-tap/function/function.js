@@ -24,6 +24,42 @@ const users = [
 
 function userStatistics() {
 
+  return {
+    total_age: handleTotalAge(users),
+    max_age: handlerMaxAge(users),
+    min_age: handlerMinAge(users)
+  };
+}
+
+function handleTotalAge(users) {
+  // b1: Lặp qua từng thaq user.
+  // b2: Mỗi lần lặp qua user thì mình lấy tuổi của thaq user đó và cộng với tuổi trước đó.
+  // b3: Trả về tổng số tuổi.
+  // let totalAge = 0;//0 | 21 | 43 | 62 | ...
+  // users.forEach(function(user) {// user:1  | user:2 | user:3 | ...
+  //   totalAge = totalAge + user.age; //0 + 21 = 21 | 21 + 22 = 43 | 43 + 19 = 62 | ...
+  // });
+  // return totalAge;
+
+  // let totalAge = 0;
+  // for (let i=0; i<users.length; i++) {
+  //   totalAge = totalAge + users[i].age;
+  // }
+  // return totalAge;
+  // for(),
+  // while do
+}
+
+function handlerMaxAge(users) {
+  // forEach
+  // for
+  // while do
+}
+
+function handlerMinAge(users) {
+  // forEach
+  // for
+  // while do
 }
 
 const result = userStatistics(users);
